@@ -8,12 +8,11 @@
 * Author URI: https://rdmarketing.com.br/
 **/
 
-add_action( 'woocommerce_thankyou', 'websensepro_redirectcustom');
-function websensepro_redirectcustom( $order_id ){
-    $order = wc_get_order( $order_id );
-    $url = 'https://api.whatsapp.com/send/?phone=5521982095019&text=Ol%C3%A1+Tran%C3%A7arte%21&type=phone_number&app_absent=0';
-    if ( ! $order->has_status( 'failed' ) ) {
-        wp_safe_redirect( $url );
+add_action( 'woocommerce_thankyou', 'lc_redirect_after_checkout');
+function lc_redirect_after_checkout( $order_id ){
+ 	if (class_exists('WooCommerce')) {
+        $whatsapp_link = 'https://api.whatsapp.com/send/?phone=5521982095019&text=Ol%C3%A1+Tran%C3%A7arte%21&type=phone_number&app_absent=0';
+        wp_redirect($whatsapp_link);
         exit;
     }
 }
