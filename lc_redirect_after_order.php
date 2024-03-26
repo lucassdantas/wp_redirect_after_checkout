@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Redireciona após a o checkout concluído
 * Plugin URI: https://github.com/lucassdantas/wp_redirect_after_checkout
-* Description: Plugin to sent email before show calculation result
+* Description: O usuário será redirecionado para o whatsApp após concluir um pedido
 * Version: 1.0.0
 * Author: R&D Marketing Digital
 * Author URI: https://rdmarketing.com.br/
